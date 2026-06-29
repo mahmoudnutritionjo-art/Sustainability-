@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability & Responsibility | First Nutrition MENA</title>
+  <meta name="description" content="Building a Responsible Future at First Nutrition through Environmental Stewardship, Social Responsibility, and Corporate Governance backed by ISO Certifications." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            red: { 500: '#f43131', 600: '#d82222', 700: '#b91818' },
+            gold: { 400: '#f5b94d', 500: '#e6a02e' },
+            ink: { 900: '#0a0b0f', 800: '#15171c', 700: '#1f2229' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: #ffffff;
+      color: #252933;
+      overflow-x: hidden;
+    }
+
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0a0b0f; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #f43131, #d82222);
+      border-radius: 10px;
+    }
+    ::selection { background: #f43131; color: #fff; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+
+    .text-gradient-red {
+      background: linear-gradient(135deg, #f43131 0%, #ff6b6b 50%, #f43131 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #f5b94d 0%, #e6a02e 50%, #f5b94d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass {
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .noise-bg { position: relative; }
+
+    .noise-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+      opacity: .04;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .grid-pattern-light {
+      background-image:
+        linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .fnx-wrap {
+      width: min(1280px,94%);
+      margin: 0 auto;
+    }
+
+    .fnx-header {
+      position: sticky;
+      top: 0;
+      z-index: 9998;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #ededee;
+    }
+
+    .fnx-header-inner {
+      min-height: 78px;
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .fnx-logo img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .fnx-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .fnx-nav a {
+      text-decoration: none;
+      color: #505866;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      transition: .25s ease;
+      white-space: nowrap;
+    }
+
+    .fnx-nav a:hover,
+    .fnx-nav a.active {
+      color: #0e0f12;
+    }
+
+    .fnx-search {
+      width: min(320px,100%);
+      height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px 0 16px;
+      border: 1px solid #ececef;
+      background: #f7f7f8;
+      border-radius: 100px;
+    }
+
+    .fnx-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #555;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .fnx-search svg {
+      width: 18px;
+      height: 18px;
+      stroke: #9aa1ac;
+      stroke-width: 2;
+      fill: none;
+      flex: 0 0 auto;
+    }
+
+    .fnx-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .fnx-right a {
+      text-decoration: none;
+      color: #555c67;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
+    }
+
+    .iso-logo {
+      height: 130px;
+      max-width: 220px;
+      width: auto;
+      object-fit: contain;
+      margin: 0 auto 1.75rem;
+      display: block;
+      filter: drop-shadow(0 12px 25px rgba(0,0,0,.18));
+    }
+
+    .brand-wide-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 2rem;
+      box-shadow: 0 30px 80px rgba(0,0,0,.14);
+    }
+
+    @media(max-width:1180px) {
+      .fnx-header-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .fnx-search { width: 100%; }
+    }
+
+    @media(max-width:768px) {
+      .iso-logo {
+        height: 105px;
+        max-width: 170px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fnxProgress" style="position:fixed;top:0;left:0;height:4px;width:0%;z-index:9999;background:linear-gradient(90deg,#f43131,#f5b94d,#f43131);box-shadow:0 0 20px rgba(244,49,49,0.5);transition:width .15s ease;"></div>
+
+  <div class="relative">
+    <header id="fnxHeader" class="fnx-header transition-all duration-500">
+      <div class="fnx-wrap">
+        <div class="fnx-header-inner">
+          <a href="#" class="fnx-logo">
+            <img src="https://www.firstnutrition.com/wp-content/uploads/2026/05/firstnutritionjo-logo.webp" alt="First Nutrition">
+          </a>
+
+          <nav class="fnx-nav">
+            <a href="#">SHOP</a>
+            <a href="#">CATEGORIES</a>
+            <a href="#">HOT OFFERS</a>
+            <a href="#">OUR BRANDS</a>
+            <a href="#" class="active">SUSTAINABILITY</a>
+            <a href="#">MORE+</a>
+          </nav>
+
+          <div class="fnx-search">
+            <input type="text" placeholder="Search...">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          </div>
+
+          <div class="fnx-right">
+            <a href="#">LOGIN / REGISTER</a>
+            <a href="#">العربية</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="relative bg-[#0a0b0f] text-white overflow-hidden noise-bg">
+        <div class="absolute inset-0">
+          <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/Hero.png?raw=true" alt="First Nutrition Sustainability Hero" class="w-full h-full object-cover opacity-70" />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0a0b0f] via-[#0a0b0f]/92 to-[#0a0b0f]/35"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-transparent to-transparent"></div>
+        </div>
+
+        <div class="absolute inset-0 grid-pattern opacity-50"></div>
+        <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#f43131] opacity-[0.12] blur-[120px] animate-pulse"></div>
+
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div class="reveal flex items-center justify-center gap-2 mb-8">
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border-white/20">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f5b94d] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#f5b94d]"></span>
+              </span>
+              <span class="text-[11px] font-black uppercase tracking-[0.2em]">Sustainability &amp; Responsibility</span>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <h1 class="reveal reveal-delay-1 text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.98] font-black tracking-[-0.04em] mb-8">
+                Building a <span class="text-gradient-gold">Responsible</span> Future
+              </h1>
+
+              <div class="reveal reveal-delay-2 space-y-4 text-[16px] leading-relaxed text-white/75 max-w-xl mb-8">
+                <p>At <span class="text-white font-semibold">First Nutrition</span>, sustainability is about creating lasting value—for our customers, employees, partners, and the communities we serve.</p>
+                <p>As one of the Middle East and North Africa's leading distributors of premium sports nutrition brands, we recognize that long-term success depends on operating responsibly, maintaining the highest quality standards, and continuously improving the way we do business.</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2 relative">
+              <div class="relative p-8 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-md border border-white/10 border-l-4 border-l-[#f5b94d]">
+                <p class="text-xl lg:text-2xl font-black tracking-tight leading-relaxed mb-4">Our approach to sustainability is built on three core pillars:</p>
+
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-gradient-red">Environmental Stewardship</span>
+                  <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-gradient-gold">Social Responsibility</span>
+                  <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-white">Corporate Governance</span>
+                </div>
+
+                <p class="text-sm text-white/60 mt-6 leading-relaxed">These commitments are supported by internationally recognized management systems that provide an independent framework for excellence, accountability, and continuous improvement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESG -->
+      <section class="relative py-24 lg:py-32 bg-white overflow-hidden">
+        <div class="absolute top-20 right-0 w-96 h-96 rounded-full bg-[#f43131] opacity-[0.03] blur-3xl"></div>
+        <div class="absolute bottom-20 left-0 w-96 h-96 rounded-full bg-[#f5b94d] opacity-[0.03] blur-3xl"></div>
+
+        <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div class="reveal text-center max-w-3xl mx-auto mb-20">
+            <div class="inline-flex items-center gap-3 mb-6">
+              <span class="h-px w-12 bg-[#f43131]"></span>
+              <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#f43131]">Framework</span>
+              <span class="h-px w-12 bg-[#f43131]"></span>
+            </div>
+
+            <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-black tracking-[-0.04em] leading-[0.98] text-[#0a0b0f] mb-6">
+              Our <span class="font-serif italic">ESG</span> Commitment
+            </h2>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+            <div class="reveal group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f43131] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/5">
+              <div>
+                <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/1Environmental.png?raw=true" alt="Environmental Stewardship" class="card-image" />
+
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f43131] to-[#b91818] flex items-center justify-center mb-8 text-white font-black">E</div>
+                <h3 class="text-2xl font-black text-[#0a0b0f] tracking-tight mb-4">Environmental Stewardship</h3>
+                <p class="text-[14px] leading-relaxed text-[#505866] mb-6">We are committed to minimizing the environmental impact of our operations while continuously improving efficiency throughout our supply chain by:</p>
+
+                <ul class="space-y-3 text-[14px] text-[#505866]">
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Optimizing warehousing and inventory management to minimize waste.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Improving logistics planning to enhance transportation efficiency.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Encouraging digital processes to reduce paper consumption.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Partnering with global brands that share our sustainable values.</li>
+                </ul>
+              </div>
+
+              <div class="mt-8 pt-4 border-t border-black/5 text-[11px] font-bold text-black/40 uppercase tracking-widest">Supply Chain &amp; Efficiency</div>
+            </div>
+
+            <div class="reveal reveal-delay-1 group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-gradient-to-br from-[#0a0b0f] to-[#1f2229] text-white border border-[#1d2128] shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div class="absolute inset-0 grid-pattern opacity-30 rounded-[2rem]"></div>
+
+              <div class="relative">
+                <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/2Social%20Responsibility.png?raw=true" alt="Social Responsibility" class="card-image" />
+
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f5b94d] to-[#e6a02e] flex items-center justify-center mb-8 text-[#0a0b0f] font-black">S</div>
+                <h3 class="text-2xl font-black text-white tracking-tight mb-4">Social Responsibility</h3>
+                <p class="text-[14px] leading-relaxed text-white/70 mb-6">People are the foundation of our success. We value integrity, equal opportunity, respect, safety, and professional development:</p>
+
+                <ul class="space-y-3 text-[14px] text-white/70">
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Promoting equal opportunity &amp; fair employment.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Maintaining a safe and healthy working environment.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Investing in employee learning &amp; development.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Conducting business with transparency and integrity.</li>
+                </ul>
+              </div>
+
+              <div class="relative mt-8 pt-4 border-t border-white/10 text-[11px] font-bold text-white/40 uppercase tracking-widest">People &amp; Culture First</div>
+            </div>
+
+            <div class="reveal reveal-delay-2 group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f5b94d] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5">
+              <div>
+                <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/3Governance.png?raw=true" alt="Corporate Governance" class="card-image" />
+
+                <div class="w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center mb-8 text-white font-black">G</div>
+                <h3 class="text-2xl font-black text-[#0a0b0f] tracking-tight mb-4">Corporate Governance</h3>
+                <p class="text-[14px] leading-relaxed text-[#505866] mb-6">Strong governance is essential to maintaining trust. Our systems ensure clear responsibilities and managed risks:</p>
+
+                <ul class="space-y-3 text-[14px] text-[#505866]">
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Ethical leadership and responsible decision-making.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Compliance with global legal and regulatory requirements.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Quality assurance through standardized frameworks.</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Transparent communication with all stakeholders.</li>
+                </ul>
+              </div>
+
+              <div class="mt-8 pt-4 border-t border-black/5 text-[11px] font-bold text-black/40 uppercase tracking-widest">Trust &amp; Accountability</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="relative py-24 lg:py-32 bg-[#0a0b0f] text-white overflow-hidden noise-bg">
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
+        <div class="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-[#f43131] opacity-10 blur-3xl"></div>
+
+        <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div class="reveal text-center max-w-3xl mx-auto mb-20">
+            <div class="inline-flex items-center gap-3 mb-6">
+              <span class="h-px w-12 bg-[#f43131]"></span>
+              <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#f5b94d]">Independent Validation</span>
+              <span class="h-px w-12 bg-[#f43131]"></span>
+            </div>
+
+            <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black tracking-[-0.04em] leading-[0.98] mb-6">
+              International <span class="font-serif italic text-gradient-gold">Certifications</span>
+            </h2>
+
+            <p class="text-base text-white/70 max-w-xl mx-auto">Our commitments are independently validated by internationally recognized ISO standards verifying our excellence.</p>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+            <div class="reveal flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-[#f43131]/50 transition-all duration-500 hover:-translate-y-2">
+              <div>
+                <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_9001.svg" alt="ISO 9001" class="iso-logo" />
+
+                <div class="inline-block text-sm font-black text-[#f43131] border border-[#f43131]/30 bg-[#f43131]/10 px-4 py-1.5 rounded-full mb-4">CERTIFIED</div>
+                <h3 class="text-3xl font-black tracking-tight mb-2">ISO 9001:2015</h3>
+                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Quality Management System</p>
+
+                <p class="text-sm leading-relaxed text-white/70 mb-6">Ensures rigorous operational execution from supplier qualification to premium warehousing and logistics.</p>
+
+                <ul class="space-y-3 text-sm text-white/70">
+                  <li>✓ Controlled Storage &amp; Inventory</li>
+                  <li>✓ Accurate Order Processing</li>
+                  <li>✓ Continuous Function Optimization</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-1 flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-[#f5b94d]/50 transition-all duration-500 hover:-translate-y-2">
+              <div>
+                <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_26000.svg" alt="ISO 26000" class="iso-logo" />
+
+                <div class="inline-block text-sm font-black text-[#f5b94d] border border-[#f5b94d]/30 bg-[#f5b94d]/10 px-4 py-1.5 rounded-full mb-4">ALIGNED</div>
+                <h3 class="text-3xl font-black tracking-tight mb-2">ISO 26000:2010</h3>
+                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Social Responsibility</p>
+
+                <p class="text-sm leading-relaxed text-white/70 mb-6">Guides us to act ethically, respecting our employees, stakeholders, and the MENA communities we serve.</p>
+
+                <ul class="space-y-3 text-sm text-white/70">
+                  <li>✓ Ethical Supplier Relations</li>
+                  <li>✓ Accurate Product Communication</li>
+                  <li>✓ Social &amp; Environmental Assessment</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2 flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-white/40 transition-all duration-500 hover:-translate-y-2">
+              <div>
+                <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_450001.svg" alt="ISO 45001" class="iso-logo" />
+
+                <div class="inline-block text-sm font-black text-white border border-white/30 bg-white/10 px-4 py-1.5 rounded-full mb-4">MANAGED</div>
+                <h3 class="text-3xl font-black tracking-tight mb-2">ISO 45001:2018</h3>
+                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Occupational Health &amp; Safety</p>
+
+                <p class="text-sm leading-relaxed text-white/70 mb-6">Maintains a secure workplace culture that mitigates supply chain risks and elevates overall team wellbeing.</p>
+
+                <ul class="space-y-3 text-sm text-white/70">
+                  <li>✓ Safe Logistics Operations</li>
+                  <li>✓ Robust Business Continuity</li>
+                  <li>✓ Minimized Operational Risks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOOKING AHEAD -->
+      <section class="relative py-24 lg:py-32 bg-[#f7f8fa] text-center overflow-hidden">
+        <div class="absolute inset-0 grid-pattern-light opacity-40"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 lg:px-10">
+          <div class="reveal max-w-4xl mx-auto">
+            <div class="relative p-10 lg:p-12 rounded-[2rem] bg-white border-2 border-[#f43131] shadow-xl shadow-black/5">
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 rounded-full bg-[#f43131] text-white text-[10px] font-black uppercase tracking-widest">Looking Ahead</div>
+
+              <h3 class="text-2xl lg:text-3xl font-black text-[#0a0b0f] tracking-tight mb-4">Sustainability is a continuous journey.</h3>
+
+              <p class="text-[#505866] text-base leading-relaxed max-w-2xl mx-auto">As our business evolves, we remain committed to strengthening our environmental practices, investing in our people, enhancing governance, and continuously improving the quality and reliability of our operations across MENA.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMISE -->
+      <section class="relative py-24 lg:py-32 overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#f5b94d] opacity-[0.05] blur-3xl"></div>
+
+        <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+          <div class="reveal max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-3 mb-6">
+              <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#f43131]">Our Promise</span>
+              <span class="h-px w-12 bg-[#f43131]"></span>
+            </div>
+
+            <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black tracking-[-0.04em] leading-[0.98] text-[#0a0b0f] mb-8">
+              Delivering Quality <span class="text-gradient-red">Without Compromise</span>
+            </h2>
+
+            <p class="text-base text-[#505866] leading-relaxed">
+              For more than <span class="font-bold text-[#0a0b0f]">30 years</span>, First Nutrition has proudly represented <span class="font-bold text-[#0a0b0f]">45+ internationally recognized sports nutrition brands</span> across the Middle East and North Africa. Our sustainability commitments reflect standards by which we operate every single day.
+            </p>
+          </div>
+
+          <div class="reveal mb-14">
+            <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/8.%20brandssssss.png?raw=true" alt="First Nutrition Brands and Products" class="brand-wide-img" />
+          </div>
+
+          <div class="reveal text-center pt-12 border-t border-black/5">
+            <img src="https://www.firstnutrition.com/wp-content/uploads/2026/06/54657678-scaled.png" alt="30 Years of Excellence" class="h-28 lg:h-32 w-auto mx-auto mb-4 object-contain" style="filter:drop-shadow(0 10px 30px rgba(244,49,49,0.15))" />
+
+            <p class="text-2xl lg:text-3xl font-black text-[#0a0b0f] tracking-tight">
+              Contributing to a Healthier &amp; Sustainable Future
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var bar = document.getElementById('fnxProgress');
+      var header = document.getElementById('fnxHeader');
+
+      function updateProgress() {
+        var top = window.scrollY || document.documentElement.scrollTop;
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        var value = total > 0 ? (top / total) * 100 : 0;
+
+        if (bar) bar.style.width = value + '%';
+
+        if (header) {
+          if (top > 30) {
+            header.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-lg', 'shadow-black/5');
+          } else {
+            header.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-lg', 'shadow-black/5');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      var items = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        items.forEach(function (item) {
+          observer.observe(item);
+        });
+      } else {
+        items.forEach(function (item) {
+          item.classList.add('visible');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
