@@ -242,69 +242,100 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
-      gap: clamp(2.5rem, 4vw, 5rem);
-      align-items: stretch;
+      grid-template-columns: 0.95fr 0.85fr;
+      gap: clamp(3.5rem, 5vw, 6.5rem);
+      align-items: center;
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .hero-left {
-      min-height: 440px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      max-width: 560px;
+    }
+
+    .hero-title {
+      max-width: 560px;
+      font-size: clamp(3rem, 5vw, 4.65rem);
+      line-height: .96;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      margin-bottom: 1.75rem;
     }
 
     .hero-copy {
-      font-size: clamp(20px, 1.28vw, 23px);
-      line-height: 1.92;
-      color: rgba(255,255,255,.92);
+      font-size: clamp(16.5px, .98vw, 18px);
+      line-height: 1.78;
+      color: rgba(255,255,255,.86);
       font-weight: 500;
+      max-width: 560px;
     }
 
-    .hero-intro {
-      font-size: clamp(21px, 1.35vw, 24px);
-      line-height: 1.88;
+    .hero-highlight {
       color: #ffffff;
-      font-weight: 700;
-      padding: 1.2rem 1.35rem;
-      border-left: 4px solid #f5b94d;
-      border-radius: 1.15rem;
-      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+      font-weight: 800;
+    }
+
+    .hero-highlight strong {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .hero-highlight-mark {
+      color: #f5b94d;
+      font-weight: 900;
     }
 
     .hero-pillars-card {
-      min-height: 440px;
-      max-width: 620px;
+      width: 100%;
+      max-width: 540px;
       margin-left: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: clamp(1.75rem, 2.2vw, 2.4rem);
+      border-radius: 2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.11);
+      border-left: 4px solid #f5b94d;
       box-shadow: 0 24px 70px rgba(0,0,0,.24);
     }
 
+    .hero-card-title {
+      font-size: clamp(24px, 1.75vw, 30px);
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.35rem;
+      max-width: 470px;
+    }
+
     .hero-box-copy {
-      font-size: clamp(18px, 1.06vw, 20px);
-      line-height: 1.9;
+      font-size: clamp(15.5px, .9vw, 17px);
+      line-height: 1.72;
       font-weight: 500;
+      color: rgba(255,255,255,.75);
+      margin-top: 1.4rem;
+      max-width: 470px;
     }
 
     .section-copy {
-      font-size: clamp(20px, 1.2vw, 23px);
-      line-height: 1.95;
+      font-size: clamp(17px, 1vw, 19px);
+      line-height: 1.75;
       font-weight: 500;
     }
 
     .card-copy,
     .card-list {
-      font-size: clamp(17.5px, 1.04vw, 19px);
-      line-height: 1.88;
+      font-size: clamp(15.5px, .92vw, 17px);
+      line-height: 1.68;
       font-weight: 500;
     }
 
     .iso-list {
-      font-size: clamp(17.5px, 1.04vw, 19px);
-      line-height: 1.84;
+      font-size: clamp(15.5px, .92vw, 17px);
+      line-height: 1.68;
       font-weight: 600;
     }
 
@@ -321,11 +352,11 @@
     @media(max-width:1024px) {
       .hero-layout {
         grid-template-columns: 1fr;
+        max-width: 100%;
       }
 
       .hero-left,
       .hero-pillars-card {
-        min-height: auto;
         max-width: 100%;
         margin-left: 0;
       }
@@ -395,7 +426,7 @@
         <div class="absolute inset-0 grid-pattern opacity-50"></div>
         <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#f43131] opacity-[0.12] blur-[120px] animate-pulse"></div>
 
-        <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-18 pb-18 lg:pt-24 lg:pb-24">
           <div class="reveal flex items-center justify-center gap-2 mb-8">
             <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border-white/20">
               <span class="relative flex h-2 w-2">
@@ -408,27 +439,27 @@
 
           <div class="hero-layout">
             <div class="hero-left">
-              <h1 class="reveal reveal-delay-1 max-w-[680px] text-[clamp(3.25rem,5.9vw,5.4rem)] leading-[0.94] font-black tracking-[-0.045em] mb-8">
+              <h1 class="reveal reveal-delay-1 hero-title">
                 Building a <span class="text-gradient-gold">Responsible</span> Future
               </h1>
 
-              <div class="reveal reveal-delay-2 hero-copy space-y-5 max-w-[700px] mb-8">
-                <p class="hero-intro">At <span class="text-white font-semibold">First Nutrition</span>, sustainability is about creating lasting value—for our customers, employees, partners, and the communities we serve.</p>
+              <div class="reveal reveal-delay-2 hero-copy space-y-5 mb-8">
+                <p class="hero-highlight">At <strong>First Nutrition</strong>, sustainability is about creating <span class="hero-highlight-mark">lasting value</span>—for our customers, employees, partners, and the communities we serve.</p>
                 <p>As one of the Middle East and North Africa's leading distributors of premium sports nutrition brands, we recognize that long-term success depends on operating responsibly, maintaining the highest quality standards, and continuously improving the way we do business.</p>
               </div>
             </div>
 
             <div class="reveal reveal-delay-2 relative">
-              <div class="hero-pillars-card relative p-8 lg:p-10 rounded-[2.5rem] bg-white/[0.06] backdrop-blur-md border border-white/10 border-l-4 border-l-[#f5b94d]">
-                <p class="text-[30px] lg:text-[38px] font-black tracking-tight leading-[1.16] mb-7 max-w-[520px]">Our approach to sustainability is built on three core pillars:</p>
+              <div class="hero-pillars-card">
+                <p class="hero-card-title">Our approach to sustainability is built on three core pillars:</p>
 
-                <div class="flex flex-wrap gap-3 mt-2 mb-2">
-                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[13px] font-black uppercase tracking-wider text-gradient-red">Environmental Stewardship</span>
-                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[13px] font-black uppercase tracking-wider text-gradient-gold">Social Responsibility</span>
-                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[13px] font-black uppercase tracking-wider text-white">Corporate Governance</span>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[12px] font-black uppercase tracking-wider text-gradient-red">Environmental Stewardship</span>
+                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[12px] font-black uppercase tracking-wider text-gradient-gold">Social Responsibility</span>
+                  <span class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[12px] font-black uppercase tracking-wider text-white">Corporate Governance</span>
                 </div>
 
-                <p class="hero-box-copy text-white/80 mt-7">These commitments are supported by internationally recognized management systems that provide an independent framework for excellence, accountability, and continuous improvement.</p>
+                <p class="hero-box-copy">These commitments are supported by internationally recognized management systems that provide an independent framework for excellence, accountability, and continuous improvement.</p>
               </div>
             </div>
           </div>
@@ -454,7 +485,7 @@
           </div>
 
           <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-            <div class="reveal group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f43131] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/5">
+            <div class="reveal group relative flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f43131] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/5">
               <div>
                 <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/1Environmental.png?raw=true" alt="Environmental Stewardship" class="card-image" />
 
@@ -472,7 +503,7 @@
               <div class="mt-8 pt-4 border-t border-black/5 text-[11px] font-bold text-black/40 uppercase tracking-widest">Supply Chain &amp; Efficiency</div>
             </div>
 
-            <div class="reveal reveal-delay-1 group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-gradient-to-br from-[#0a0b0f] to-[#1f2229] text-white border border-[#1d2128] shadow-xl hover:-translate-y-2 transition-all duration-500">
+            <div class="reveal reveal-delay-1 group relative flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] bg-gradient-to-br from-[#0a0b0f] to-[#1f2229] text-white border border-[#1d2128] shadow-xl hover:-translate-y-2 transition-all duration-500">
               <div class="absolute inset-0 grid-pattern opacity-30 rounded-[2rem]"></div>
 
               <div class="relative">
@@ -492,7 +523,7 @@
               <div class="relative mt-8 pt-4 border-t border-white/10 text-[11px] font-bold text-white/40 uppercase tracking-widest">People &amp; Culture First</div>
             </div>
 
-            <div class="reveal reveal-delay-2 group relative flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f5b94d] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5">
+            <div class="reveal reveal-delay-2 group relative flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] bg-[#f7f8fa] border border-[#e8eaee] hover:border-[#f5b94d] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5">
               <div>
                 <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/3Governance.png?raw=true" alt="Corporate Governance" class="card-image" />
 
@@ -530,11 +561,11 @@
               International <span class="font-serif italic text-gradient-gold">Certifications</span>
             </h2>
 
-            <p class="section-copy text-white/72 max-w-2xl mx-auto">Our commitments are independently validated by internationally recognized ISO standards verifying our excellence.</p>
+            <p class="section-copy text-white/72 max-w-xl mx-auto">Our commitments are independently validated by internationally recognized ISO standards verifying our excellence.</p>
           </div>
 
           <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-            <div class="reveal flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-[#f43131]/50 transition-all duration-500 hover:-translate-y-2">
+            <div class="reveal flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] glass border-white/10 hover:border-[#f43131]/50 transition-all duration-500 hover:-translate-y-2">
               <div>
                 <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_9001.svg" alt="ISO 9001" class="iso-logo" />
 
@@ -552,7 +583,7 @@
               </div>
             </div>
 
-            <div class="reveal reveal-delay-1 flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-[#f5b94d]/50 transition-all duration-500 hover:-translate-y-2">
+            <div class="reveal reveal-delay-1 flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] glass border-white/10 hover:border-[#f5b94d]/50 transition-all duration-500 hover:-translate-y-2">
               <div>
                 <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_26000.svg" alt="ISO 26000" class="iso-logo" />
 
@@ -570,7 +601,7 @@
               </div>
             </div>
 
-            <div class="reveal reveal-delay-2 flex flex-col justify-between p-8 lg:p-10 rounded-[2rem] glass border-white/10 hover:border-white/40 transition-all duration-500 hover:-translate-y-2">
+            <div class="reveal reveal-delay-2 flex flex-col justify-between p-7 lg:p-9 rounded-[2rem] glass border-white/10 hover:border-white/40 transition-all duration-500 hover:-translate-y-2">
               <div>
                 <img src="https://raw.githubusercontent.com/mahmoudnutritionjo-art/Sustainability-/2e426719c28d63e7f26aab6d0302b3e51cc93630/%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D9%88_450001.svg" alt="ISO 45001" class="iso-logo" />
 
@@ -600,7 +631,7 @@
             <div class="relative p-10 lg:p-14 rounded-[2rem] bg-white border-2 border-[#f43131] shadow-xl shadow-black/5">
               <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 rounded-full bg-[#f43131] text-white text-[10px] font-black uppercase tracking-widest">Looking Ahead</div>
 
-              <h3 class="text-[34px] lg:text-[48px] font-black text-[#0a0b0f] tracking-tight mb-5">Sustainability is a continuous journey.</h3>
+              <h3 class="text-[32px] lg:text-[42px] font-black text-[#0a0b0f] tracking-tight mb-5">Sustainability is a continuous journey.</h3>
 
               <p class="section-copy text-[#505866] max-w-4xl mx-auto">As our business evolves, we remain committed to strengthening our environmental practices, investing in our people, enhancing governance, and continuously improving the quality and reliability of our operations across MENA.</p>
             </div>
@@ -614,7 +645,8 @@
 
         <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
           <div class="reveal max-w-5xl mx-auto mb-16">
-            <div class="inline-flex items-center gap-3 mb-6">
+            <div class="inline-flex items-center justify-center gap-3 mb-6">
+              <span class="h-px w-12 bg-[#f43131]"></span>
               <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#f43131]">Our Promise</span>
               <span class="h-px w-12 bg-[#f43131]"></span>
             </div>
