@@ -229,10 +229,44 @@
 
     .brand-wide-img {
       width: 100%;
-      max-height: 420px;
+      max-height: 520px;
       object-fit: cover;
       border-radius: 2rem;
-      box-shadow: 0 30px 80px rgba(0,0,0,.14);
+      box-shadow: 0 30px 90px rgba(0,0,0,.16);
+    }
+
+    .hero-copy {
+      font-size: clamp(16px, 1.05vw, 18px);
+      line-height: 1.8;
+      color: rgba(255,255,255,.82);
+    }
+
+    .hero-pillars-card {
+      min-height: 230px;
+      max-width: 620px;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-copy {
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .card-copy,
+    .card-list {
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    @media(max-width:1024px) {
+      .hero-pillars-card {
+        min-height: auto;
+        max-width: 100%;
+        margin-left: 0;
+      }
     }
 
     @media(max-width:1180px) {
@@ -312,19 +346,19 @@
 
           <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <h1 class="reveal reveal-delay-1 text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.98] font-black tracking-[-0.04em] mb-8">
+              <h1 class="reveal reveal-delay-1 max-w-xl text-[clamp(2.75rem,5.5vw,4.8rem)] leading-[0.96] font-black tracking-[-0.04em] mb-8">
                 Building a <span class="text-gradient-gold">Responsible</span> Future
               </h1>
 
-              <div class="reveal reveal-delay-2 space-y-4 text-[16px] leading-relaxed text-white/75 max-w-xl mb-8">
+              <div class="reveal reveal-delay-2 hero-copy space-y-4 max-w-xl mb-8">
                 <p>At <span class="text-white font-semibold">First Nutrition</span>, sustainability is about creating lasting value—for our customers, employees, partners, and the communities we serve.</p>
                 <p>As one of the Middle East and North Africa's leading distributors of premium sports nutrition brands, we recognize that long-term success depends on operating responsibly, maintaining the highest quality standards, and continuously improving the way we do business.</p>
               </div>
             </div>
 
             <div class="reveal reveal-delay-2 relative">
-              <div class="relative p-8 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-md border border-white/10 border-l-4 border-l-[#f5b94d]">
-                <p class="text-xl lg:text-2xl font-black tracking-tight leading-relaxed mb-4">Our approach to sustainability is built on three core pillars:</p>
+              <div class="hero-pillars-card relative p-7 lg:p-8 rounded-[2.5rem] bg-white/[0.05] backdrop-blur-md border border-white/10 border-l-4 border-l-[#f5b94d]">
+                <p class="text-xl lg:text-[26px] font-black tracking-tight leading-[1.25] mb-5">Our approach to sustainability is built on three core pillars:</p>
 
                 <div class="flex flex-wrap gap-3 mt-4">
                   <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-gradient-red">Environmental Stewardship</span>
@@ -332,7 +366,7 @@
                   <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-white">Corporate Governance</span>
                 </div>
 
-                <p class="text-sm text-white/60 mt-6 leading-relaxed">These commitments are supported by internationally recognized management systems that provide an independent framework for excellence, accountability, and continuous improvement.</p>
+                <p class="text-[15px] lg:text-[16px] text-white/68 mt-6 leading-[1.75]">These commitments are supported by internationally recognized management systems that provide an independent framework for excellence, accountability, and continuous improvement.</p>
               </div>
             </div>
           </div>
@@ -362,11 +396,10 @@
               <div>
                 <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/1Environmental.png?raw=true" alt="Environmental Stewardship" class="card-image" />
 
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f43131] to-[#b91818] flex items-center justify-center mb-8 text-white font-black">E</div>
                 <h3 class="text-2xl font-black text-[#0a0b0f] tracking-tight mb-4">Environmental Stewardship</h3>
-                <p class="text-[14px] leading-relaxed text-[#505866] mb-6">We are committed to minimizing the environmental impact of our operations while continuously improving efficiency throughout our supply chain by:</p>
+                <p class="card-copy text-[#505866] mb-6">We are committed to minimizing the environmental impact of our operations while continuously improving efficiency throughout our supply chain by:</p>
 
-                <ul class="space-y-3 text-[14px] text-[#505866]">
+                <ul class="space-y-3 card-list text-[#505866]">
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Optimizing warehousing and inventory management to minimize waste.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Improving logistics planning to enhance transportation efficiency.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f43131] mt-2 shrink-0"></span>Encouraging digital processes to reduce paper consumption.</li>
@@ -383,11 +416,10 @@
               <div class="relative">
                 <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/2Social%20Responsibility.png?raw=true" alt="Social Responsibility" class="card-image" />
 
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f5b94d] to-[#e6a02e] flex items-center justify-center mb-8 text-[#0a0b0f] font-black">S</div>
                 <h3 class="text-2xl font-black text-white tracking-tight mb-4">Social Responsibility</h3>
-                <p class="text-[14px] leading-relaxed text-white/70 mb-6">People are the foundation of our success. We value integrity, equal opportunity, respect, safety, and professional development:</p>
+                <p class="card-copy text-white/75 mb-6">People are the foundation of our success. We value integrity, equal opportunity, respect, safety, and professional development:</p>
 
-                <ul class="space-y-3 text-[14px] text-white/70">
+                <ul class="space-y-3 card-list text-white/75">
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Promoting equal opportunity &amp; fair employment.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Maintaining a safe and healthy working environment.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#f5b94d] mt-2 shrink-0"></span>Investing in employee learning &amp; development.</li>
@@ -402,11 +434,10 @@
               <div>
                 <img src="https://github.com/mahmoudnutritionjo-art/Sustainability-/blob/main/3Governance.png?raw=true" alt="Corporate Governance" class="card-image" />
 
-                <div class="w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center mb-8 text-white font-black">G</div>
                 <h3 class="text-2xl font-black text-[#0a0b0f] tracking-tight mb-4">Corporate Governance</h3>
-                <p class="text-[14px] leading-relaxed text-[#505866] mb-6">Strong governance is essential to maintaining trust. Our systems ensure clear responsibilities and managed risks:</p>
+                <p class="card-copy text-[#505866] mb-6">Strong governance is essential to maintaining trust. Our systems ensure clear responsibilities and managed risks:</p>
 
-                <ul class="space-y-3 text-[14px] text-[#505866]">
+                <ul class="space-y-3 card-list text-[#505866]">
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Ethical leadership and responsible decision-making.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Compliance with global legal and regulatory requirements.</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-2 shrink-0"></span>Quality assurance through standardized frameworks.</li>
@@ -437,7 +468,7 @@
               International <span class="font-serif italic text-gradient-gold">Certifications</span>
             </h2>
 
-            <p class="text-base text-white/70 max-w-xl mx-auto">Our commitments are independently validated by internationally recognized ISO standards verifying our excellence.</p>
+            <p class="section-copy text-white/72 max-w-2xl mx-auto">Our commitments are independently validated by internationally recognized ISO standards verifying our excellence.</p>
           </div>
 
           <div class="grid lg:grid-cols-3 gap-8 items-stretch">
@@ -447,11 +478,11 @@
 
                 <div class="inline-block text-sm font-black text-[#f43131] border border-[#f43131]/30 bg-[#f43131]/10 px-4 py-1.5 rounded-full mb-4">CERTIFIED</div>
                 <h3 class="text-3xl font-black tracking-tight mb-2">ISO 9001:2015</h3>
-                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Quality Management System</p>
+                <p class="text-[14px] font-bold tracking-wider text-white/55 uppercase mb-6">Quality Management System</p>
 
-                <p class="text-sm leading-relaxed text-white/70 mb-6">Ensures rigorous operational execution from supplier qualification to premium warehousing and logistics.</p>
+                <p class="card-copy text-white/72 mb-6">Ensures rigorous operational execution from supplier qualification to premium warehousing and logistics.</p>
 
-                <ul class="space-y-3 text-sm text-white/70">
+                <ul class="space-y-3 card-list text-white/72">
                   <li>✓ Controlled Storage &amp; Inventory</li>
                   <li>✓ Accurate Order Processing</li>
                   <li>✓ Continuous Function Optimization</li>
@@ -465,11 +496,11 @@
 
                 <div class="inline-block text-sm font-black text-[#f5b94d] border border-[#f5b94d]/30 bg-[#f5b94d]/10 px-4 py-1.5 rounded-full mb-4">ALIGNED</div>
                 <h3 class="text-3xl font-black tracking-tight mb-2">ISO 26000:2010</h3>
-                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Social Responsibility</p>
+                <p class="text-[14px] font-bold tracking-wider text-white/55 uppercase mb-6">Social Responsibility</p>
 
-                <p class="text-sm leading-relaxed text-white/70 mb-6">Guides us to act ethically, respecting our employees, stakeholders, and the MENA communities we serve.</p>
+                <p class="card-copy text-white/72 mb-6">Guides us to act ethically, respecting our employees, stakeholders, and the MENA communities we serve.</p>
 
-                <ul class="space-y-3 text-sm text-white/70">
+                <ul class="space-y-3 card-list text-white/72">
                   <li>✓ Ethical Supplier Relations</li>
                   <li>✓ Accurate Product Communication</li>
                   <li>✓ Social &amp; Environmental Assessment</li>
@@ -483,11 +514,11 @@
 
                 <div class="inline-block text-sm font-black text-white border border-white/30 bg-white/10 px-4 py-1.5 rounded-full mb-4">MANAGED</div>
                 <h3 class="text-3xl font-black tracking-tight mb-2">ISO 45001:2018</h3>
-                <p class="text-sm font-medium tracking-wider text-white/50 uppercase mb-6">Occupational Health &amp; Safety</p>
+                <p class="text-[14px] font-bold tracking-wider text-white/55 uppercase mb-6">Occupational Health &amp; Safety</p>
 
-                <p class="text-sm leading-relaxed text-white/70 mb-6">Maintains a secure workplace culture that mitigates supply chain risks and elevates overall team wellbeing.</p>
+                <p class="card-copy text-white/72 mb-6">Maintains a secure workplace culture that mitigates supply chain risks and elevates overall team wellbeing.</p>
 
-                <ul class="space-y-3 text-sm text-white/70">
+                <ul class="space-y-3 card-list text-white/72">
                   <li>✓ Safe Logistics Operations</li>
                   <li>✓ Robust Business Continuity</li>
                   <li>✓ Minimized Operational Risks</li>
@@ -509,7 +540,7 @@
 
               <h3 class="text-2xl lg:text-3xl font-black text-[#0a0b0f] tracking-tight mb-4">Sustainability is a continuous journey.</h3>
 
-              <p class="text-[#505866] text-base leading-relaxed max-w-2xl mx-auto">As our business evolves, we remain committed to strengthening our environmental practices, investing in our people, enhancing governance, and continuously improving the quality and reliability of our operations across MENA.</p>
+              <p class="section-copy text-[#505866] max-w-3xl mx-auto">As our business evolves, we remain committed to strengthening our environmental practices, investing in our people, enhancing governance, and continuously improving the quality and reliability of our operations across MENA.</p>
             </div>
           </div>
         </div>
@@ -520,7 +551,7 @@
         <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#f5b94d] opacity-[0.05] blur-3xl"></div>
 
         <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
-          <div class="reveal max-w-3xl mx-auto mb-16">
+          <div class="reveal max-w-5xl mx-auto mb-16">
             <div class="inline-flex items-center gap-3 mb-6">
               <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#f43131]">Our Promise</span>
               <span class="h-px w-12 bg-[#f43131]"></span>
@@ -530,7 +561,7 @@
               Delivering Quality <span class="text-gradient-red">Without Compromise</span>
             </h2>
 
-            <p class="text-base text-[#505866] leading-relaxed">
+            <p class="text-lg lg:text-xl text-[#505866] leading-[1.85] max-w-4xl mx-auto">
               For more than <span class="font-bold text-[#0a0b0f]">30 years</span>, First Nutrition has proudly represented <span class="font-bold text-[#0a0b0f]">45+ internationally recognized sports nutrition brands</span> across the Middle East and North Africa. Our sustainability commitments reflect standards by which we operate every single day.
             </p>
           </div>
